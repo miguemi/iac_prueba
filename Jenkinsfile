@@ -10,8 +10,8 @@ pipeline {
   stages {
     stage('Paso para clonar el repositorio') {
       steps {
-          git url: 'git remote add origin https://github.com/miguemi/iac_prueba.git' 
-            echo "Descargado el repositorio de la IAC"
+          git url: 'https://github.com/miguemi/iac_prueba.git' 
+          echo "Descargado el repositorio de la IAC"
       }
     }
 
