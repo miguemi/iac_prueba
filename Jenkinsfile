@@ -22,7 +22,7 @@ pipeline {
         
       }
     }
-
+    
       stage('Paso para desplegar la infraestructura'){
       steps{
          sh('terraform init')
@@ -33,6 +33,13 @@ pipeline {
           echo('Despplegando la infraestructura')
           sh('terraform apply -auto-approve')
           echo('La infreastructura se desplegó con éxito!')
+        
+      }
+    }
+      stage('Paso para destruir la infraestructura'){
+      steps {
+        sh('terraform destroy -auto-approve')
+        echo "Infraestructura destruida con éxito"
         
       }
     }
